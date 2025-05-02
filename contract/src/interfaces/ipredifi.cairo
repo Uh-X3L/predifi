@@ -77,4 +77,9 @@ pub trait IPredifi<TContractState> {
         validator2: ContractAddress,
         validator3: ContractAddress,
     );
+    // Functions for filtering pools by status
+    fn get_active_pools(self: @TContractState) -> Array<PoolDetails>;
+    fn get_locked_pools(self: @TContractState) -> Array<PoolDetails>;
+    fn get_settled_pools(self: @TContractState) -> Array<PoolDetails>;
+    fn get_closed_pools(self: @TContractState) -> Array<PoolDetails>;
 }
